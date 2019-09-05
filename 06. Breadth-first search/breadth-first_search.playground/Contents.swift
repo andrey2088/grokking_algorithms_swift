@@ -20,9 +20,13 @@ struct Queue<T> {
     }
 }
 
-typealias boolMethod = (String) -> Bool
+typealias FinishCheckingMethod = (String) -> Bool
 
-func breadthFirstSearch(graph: [String: [String]], startNode: String, finishCheckingMethod: boolMethod) -> Bool {
+func breadthFirstSearch(
+    graph: [String: [String]],
+    startNode: String,
+    finishCheckingMethod: FinishCheckingMethod
+) -> Bool {
     var queue = Queue<String>()
     var searched: [String: String] = [:]
 
